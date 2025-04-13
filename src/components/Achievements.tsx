@@ -1,4 +1,3 @@
-
 import { Award, Star, Code } from 'lucide-react';
 import { 
   Github, 
@@ -32,16 +31,16 @@ const achievements = [
   }
 ];
 
-// Platform icons mapping
-const platformIcons = {
-  "Codeforces": MessageSquareCode,
-  "Codechef": FileCode2,
-  "Stackoverflow": SquareCode,
-  "Hackerrank": Code2,
-  "Hackerearth": Lightbulb,
-  "Stopstalk": Code,
-  "Github": Github,
-  "Linkedin": Linkedin
+// Platform icons and logo mapping
+const platformLogos = {
+  "Codeforces": "https://assets.codeforces.com/users/avatars/default_avatar.png",
+  "Codechef": "https://static.cdneg.be/assets/community/uploads/0102/2022/020222/codechef.png",
+  "Stackoverflow": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1200px-Stack_Overflow_icon.svg.png",
+  "Hackerrank": "https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png",
+  "Hackerearth": "https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png",
+  "Stopstalk": "https://stopstalk.com/static/images/stopstalk-square.png",
+  "Github": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+  "Linkedin": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png"
 };
 
 const codingProfiles = [
@@ -96,7 +95,7 @@ export default function Achievements() {
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {codingProfiles.map((profile, index) => {
-                const PlatformIcon = platformIcons[profile.platform] || Code;
+                const PlatformIcon = platformLogos[profile.platform] || Code;
                 return (
                   <a 
                     key={index} 
@@ -105,8 +104,12 @@ export default function Achievements() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 glass-card p-4 transition-all duration-200 hover:border-highlight group"
                   >
-                    <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
-                      <PlatformIcon className="h-4 w-4 text-highlight" />
+                    <div className="h-10 w-10 rounded-full overflow-hidden bg-muted flex items-center justify-center">
+                      <img 
+                        src={platformLogos[profile.platform]} 
+                        alt={`${profile.platform} logo`} 
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <div>
                       <div className="text-sm font-medium group-hover:text-highlight transition-colors">
