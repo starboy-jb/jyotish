@@ -14,7 +14,7 @@ const experiences = [
       "Previously worked on the Ads Billing Monetizer team project named Crush, a data pipeline that processed billions of rows of data."
     ],
     skills: ["Java", "Full Stack", "Data", "Angular-Dart", "Flutter", "Flume", "SQL", "HTML", "CSS", "Team Work"],
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+    logo: "https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw"
   },
   {
     title: "Software Engineer",
@@ -27,7 +27,7 @@ const experiences = [
       "Our team won two internal hackathons."
     ],
     skills: ["Python", "Django", "Full Stack", "GIT", "HTML", "CSS", "AWS", "SQS", "JavaScript", "Linux", "Team work"],
-    logo: "https://media.licdn.com/dms/image/C4D0BAQGmsF0umuNgPw/company-logo_200_200/0/1656674998720/hackerearth_logo?e=2147483647&v=beta&t=YvA5SLyoXQc7HQYp_SPVrC5YQzviVkONy_-FFpDnTdA"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png"
   },
   {
     title: "Problem Setter Intern",
@@ -39,7 +39,7 @@ const experiences = [
       "Conducted successful hiring challenges for Google, Facebook, Nokia, PayPal etc."
     ],
     skills: ["Data Structure", "Algorithm", "C/C++", "Core Java", "Python", "Problem Solving", "Team work"],
-    logo: "https://media.licdn.com/dms/image/C4D0BAQGmsF0umuNgPw/company-logo_200_200/0/1656674998720/hackerearth_logo?e=2147483647&v=beta&t=YvA5SLyoXQc7HQYp_SPVrC5YQzviVkONy_-FFpDnTdA"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png"
   }
 ];
 

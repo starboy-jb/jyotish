@@ -15,7 +15,7 @@ export default function About() {
               algorithmic problems.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              As a Candidate Master on Codeforces and 6★ coder on Codechef, 
+              <span style={{ color: 'violet' }}>Candidate Master</span> on Codeforces and <span style={{ color: 'rgb(255, 127, 0)' }}>6★</span> on Codechef, 
               I enjoy competitive programming and have participated in prestigious 
               competitions like Google Code Jam and Facebook Hacker Cup.
             </p>
@@ -53,7 +53,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="font-medium">Experience</h3>
-                  <p className="text-muted-foreground">4+ Years in Software Engineering</p>
+                  <p className="text-muted-foreground">4.6+ Years in Software Engineering</p>
                 </div>
               </div>
               
@@ -63,7 +63,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="font-medium">Competitive Coding</h3>
-                  <p className="text-muted-foreground">Candidate Master (CF), 6★ (CC)</p>
+                  <p className="text-muted-foreground">Candidate Master (CF), 6★ (Codechef)</p>
                 </div>
               </div>
             </div>

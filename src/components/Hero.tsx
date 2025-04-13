@@ -33,7 +33,7 @@ export default function Hero() {
             <span className="animate-pulse">|</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-            Computer Science Professional
+            👨‍💻 Software Engineer || 🏆 Competitive Programmer
           </p>
         </div>
 

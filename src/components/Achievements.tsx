@@ -9,7 +9,6 @@ const achievements = [
       "6* coder on Codechef (Max Rating - 2203). Under top 0.2% Indian users.",
       "AIR 6th out of 55,654 student in TCS Codevita 2019 (Round 1).",
       "88th rank out of 13K+ participants in the Codeforces Round 664.",
-      "900+ reputation on StackOverflow."
     ],
     icon: Star
   },
@@ -17,7 +16,8 @@ const achievements = [
     title: "Competitions",
     items: [
       "Quarter-Finalist of Google Code Jam 2021 and finished in top 5 percentile over 37000 participants.",
-      "Quarter-Finalist of Facebook Hacker Cup 2019 organized by Facebook."
+      "Quarter-Finalist of Facebook Hacker Cup 2019,2023 organized by Facebook.",
+      "900+ reputation on StackOverflow.",
     ],
     icon: Award
   }

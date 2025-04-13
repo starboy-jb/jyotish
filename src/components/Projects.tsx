@@ -15,7 +15,7 @@ const projects = [
     title: "Codechef-Standing-Tracker",
     description: "A Python tool that notifies users about their friends' activities in ongoing contests. It alerts users when their friends take the lead or make significant standing changes.",
     technologies: ["Python", "Codechef API"],
-    github: "https://github.com/starboy-jb/Codechef-Standing-Tracker",
+    github: "https://github.com/starboy-jb/Friend-Standing-Tracker",
     demo: null,
     skills: ["Python", "API Integration", "Event Tracking", "Real-time Monitoring", "User Notifications"]
   },
@@ -25,7 +25,7 @@ const projects = [
     technologies: ["Python", "Django", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/starboy-jb/BShoppy",
     demo: null,
-    skills: ["Python", "Django", "Full Stack", "Database Design", "User Authentication", "Payment Integration"]
+    skills: ["Python", "Django", "Full Stack", "Database Design", "User Authentication"]
   },
 ];
 
