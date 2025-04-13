@@ -46,7 +46,7 @@ const platformLogos = {
 const codingProfiles = [
   { platform: "Codeforces", username: "starboy_jb", url: "https://codeforces.com/profile/starboy_jb" },
   { platform: "Codechef", username: "starboy_jb", url: "https://www.codechef.com/users/starboy_jb" },
-  { platform: "Stackoverflow", username: "starboy_jb", url: "https://stackoverflow.com/users/10128754/starboy-jb" },
+  { platform: "Stackoverflow", username: "starboy_jb", url: "https://stackoverflow.com/users/7998639/starboy-jb" },
   { platform: "Hackerrank", username: "starboy_jb", url: "https://www.hackerrank.com/starboy_jb" },
   { platform: "Hackerearth", username: "starboy_jb", url: "https://www.hackerearth.com/@starboy_jb" },
   { platform: "Stopstalk", username: "starboy_jb", url: "https://www.stopstalk.com/user/profile/starboy_jb" },

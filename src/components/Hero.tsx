@@ -4,20 +4,35 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const names = ['Jyotish Bhaskar', 'Starboy_JB'];
   const [displayName, setDisplayName] = useState('');
   const fullName = 'Jyotish Bhaskar';
   const [index, setIndex] = useState(0);
+  const [currentNameIndex, setCurrentNameIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    if (index < fullName.length) {
+    const currentName = names[currentNameIndex];
+    if (!isDeleting && index < currentName.length) {
       const timeout = setTimeout(() => {
-        setDisplayName(prev => prev + fullName[index]);
+        setDisplayName(prev => prev + currentName[index]);
         setIndex(index + 1);
       }, 150);
-      
       return () => clearTimeout(timeout);
+    } else if (isDeleting && index > 0) {
+      const timeout = setTimeout(() => {
+        setDisplayName(prev => prev.slice(0, -1));
+        setIndex(index - 1);
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else if (!isDeleting && index === currentName.length) {
+      const timeout = setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
+      return () => clearTimeout(timeout);
+    } else if (isDeleting && index === 0) {
+      setIsDeleting(false);
+      setCurrentNameIndex((currentNameIndex + 1) % names.length); // Switch to the next name
     }
-  }, [index]);
+  }, [index, isDeleting, currentNameIndex]);
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
@@ -30,10 +45,10 @@ export default function Hero() {
           <h2 className="text-highlight text-lg md:text-xl font-medium">Hello, I'm</h2>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
             <span>{displayName}</span>
-            <span className="animate-pulse">|</span>
+            <span className="animate-[pulse_0.8s_ease-in-out_infinite]">|</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-            👨‍💻 Software Engineer || 🏆 Competitive Programmer
+            👨‍💻 Software Engineer at @Google || 🏆 Competitive Programmer || 🤝 Mentor
           </p>
         </div>
 
