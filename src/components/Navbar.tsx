@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="h-8 w-8 rounded-full bg-gradient-to-br from-highlight to-highlight-light flex items-center justify-center">
             <span className="text-white font-bold text-sm">JB</span>
           </div>
-          <span className="font-bold text-xl">Jyotish.</span>
+          <span className="font-bold text-xl">Jyotish</span>
         </div>
         
         {/* Desktop Navigation */}

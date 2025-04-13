@@ -16,9 +16,9 @@ const skillsCategories = [
     title: "Web Development",
     skills: [
       { name: "Django", level: 90 },
-      { name: "HTML/CSS", level: 85 },
+      { name: "HTML/CSS", level: 90 },
       { name: "React", level: 75 },
-      { name: "Angular", level: 80 },
+      { name: "Angular", level: 95 },
     ]
   },
   {
@@ -31,9 +31,9 @@ const skillsCategories = [
   {
     title: "Others",
     skills: [
-      { name: "SQL", level: 85 },
       { name: "Data Structures", level: 95 },
       { name: "Algorithms", level: 95 },
+      { name: "SQL", level: 85 },
       { name: "Linux", level: 75 },
     ]
   }

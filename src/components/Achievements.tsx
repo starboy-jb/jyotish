@@ -33,12 +33,12 @@ const achievements = [
 
 // Platform icons and logo mapping
 const platformLogos = {
-  "Codeforces": "https://assets.codeforces.com/users/avatars/default_avatar.png",
-  "Codechef": "https://static.cdneg.be/assets/community/uploads/0102/2022/020222/codechef.png",
+  "Codeforces": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3LVEIg_6x2wqlPG8pruOUnUi-wEvnw1eC0w&s",
+  "Codechef": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEcv_WJfqB-tC3ZFADRoUMMMTtOA6ZzyAA6g&s",
   "Stackoverflow": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/1200px-Stack_Overflow_icon.svg.png",
   "Hackerrank": "https://upload.wikimedia.org/wikipedia/commons/4/40/HackerRank_Icon-1000px.png",
   "Hackerearth": "https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png",
-  "Stopstalk": "https://stopstalk.com/static/images/stopstalk-square.png",
+  "Stopstalk": "https://avatars.githubusercontent.com/u/14951079?s=280&v=4",
   "Github": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
   "Linkedin": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png"
 };
