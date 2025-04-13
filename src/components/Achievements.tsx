@@ -1,12 +1,21 @@
 
-import { Award, Star, Code, AtSign } from 'lucide-react';
+import { Award, Star, Code } from 'lucide-react';
+import { 
+  Github, 
+  Linkedin, 
+  MessageSquareCode, 
+  FileCode2, 
+  SquareCode, 
+  Lightbulb, 
+  Code2 
+} from 'lucide-react';
 
 const achievements = [
   {
     title: "Competitive Programming",
     items: [
       "Candidate Master coder on Codeforces (Max Rating - 1969). Under top 1% Indian users.",
-      "6* coder on Codechef (Max Rating - 2203). Under top 0.2% Indian users.",
+      "6★ coder on Codechef (Max Rating - 2203). Under top 0.2% Indian users.",
       "AIR 6th out of 55,654 student in TCS Codevita 2019 (Round 1).",
       "88th rank out of 13K+ participants in the Codeforces Round 664.",
     ],
@@ -22,6 +31,18 @@ const achievements = [
     icon: Award
   }
 ];
+
+// Platform icons mapping
+const platformIcons = {
+  "Codeforces": MessageSquareCode,
+  "Codechef": FileCode2,
+  "Stackoverflow": SquareCode,
+  "Hackerrank": Code2,
+  "Hackerearth": Lightbulb,
+  "Stopstalk": Code,
+  "Github": Github,
+  "Linkedin": Linkedin
+};
 
 const codingProfiles = [
   { platform: "Codeforces", username: "starboy_jb", url: "https://codeforces.com/profile/starboy_jb" },
@@ -74,27 +95,30 @@ export default function Achievements() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {codingProfiles.map((profile, index) => (
-                <a 
-                  key={index} 
-                  href={profile.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 glass-card p-4 transition-all duration-200 hover:border-highlight group"
-                >
-                  <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
-                    <AtSign className="h-4 w-4 text-highlight" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium group-hover:text-highlight transition-colors">
-                      {profile.platform}
+              {codingProfiles.map((profile, index) => {
+                const PlatformIcon = platformIcons[profile.platform] || Code;
+                return (
+                  <a 
+                    key={index} 
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 glass-card p-4 transition-all duration-200 hover:border-highlight group"
+                  >
+                    <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center">
+                      <PlatformIcon className="h-4 w-4 text-highlight" />
                     </div>
-                    <div className="text-xs text-muted-foreground">
-                      {profile.username}
+                    <div>
+                      <div className="text-sm font-medium group-hover:text-highlight transition-colors">
+                        {profile.platform}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {profile.username}
+                      </div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
