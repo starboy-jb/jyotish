@@ -9,6 +9,7 @@ const projects = [
     technologies: ["Python", "Web scraping", "Beautiful Soup"],
     github: "https://github.com/starboy-jb/Codechef-Announcer",
     demo: null,
+    skills: ["Python", "Web Scraping", "Beautiful Soup", "Automation", "Real-time Notifications"]
   },
   {
     title: "Codechef-Standing-Tracker",
@@ -16,6 +17,7 @@ const projects = [
     technologies: ["Python", "Codechef API"],
     github: "https://github.com/starboy-jb/Codechef-Standing-Tracker",
     demo: null,
+    skills: ["Python", "API Integration", "Event Tracking", "Real-time Monitoring", "User Notifications"]
   },
   {
     title: "BShoppy",
@@ -23,6 +25,7 @@ const projects = [
     technologies: ["Python", "Django", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/starboy-jb/BShoppy",
     demo: null,
+    skills: ["Python", "Django", "Full Stack", "Database Design", "User Authentication", "Payment Integration"]
   },
 ];
 
@@ -51,12 +54,23 @@ export default function Projects() {
               </p>
               
               <div className="space-y-4 mt-auto">
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="text-xs bg-muted px-3 py-1 rounded-full text-muted-foreground">
                       {tech}
                     </span>
                   ))}
+                </div>
+                
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium text-highlight mb-2">Skills</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.skills.map((skill, i) => (
+                      <span key={i} className="text-xs bg-highlight/10 text-highlight-light px-3 py-1 rounded-full">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="flex gap-3">

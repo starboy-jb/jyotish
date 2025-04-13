@@ -1,8 +1,24 @@
 
 import { ArrowDownCircle, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [displayName, setDisplayName] = useState('');
+  const fullName = 'Jyotish Bhaskar';
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < fullName.length) {
+      const timeout = setTimeout(() => {
+        setDisplayName(prev => prev + fullName[index]);
+        setIndex(index + 1);
+      }, 150);
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [index]);
+
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       {/* Background elements */}
@@ -13,7 +29,8 @@ export default function Hero() {
         <div className="space-y-3 animate-slide-up">
           <h2 className="text-highlight text-lg md:text-xl font-medium">Hello, I'm</h2>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-            Jyotish Bhaskar
+            <span>{displayName}</span>
+            <span className="animate-pulse">|</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
             Computer Science Professional
