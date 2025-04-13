@@ -63,7 +63,6 @@ export default function Projects() {
                 </div>
                 
                 <div className="mb-4">
-                  <h4 className="text-sm font-medium text-highlight mb-2">Skills</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.skills.map((skill, i) => (
                       <span key={i} className="text-xs bg-highlight/10 text-highlight-light px-3 py-1 rounded-full">
