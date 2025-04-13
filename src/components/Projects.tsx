@@ -54,13 +54,6 @@ export default function Projects() {
               </p>
               
               <div className="space-y-4 mt-auto">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="text-xs bg-muted px-3 py-1 rounded-full text-muted-foreground">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
                 
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-2">
