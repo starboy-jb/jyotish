@@ -13,7 +13,8 @@ const experiences = [
       "Involved in multiple mobile and web projects, responsible for end-to-end UI and server components implementation.",
       "Previously worked on the Ads Billing Monetizer team project named Crush, a data pipeline that processed billions of rows of data."
     ],
-    skills: ["Java", "Full Stack", "Data", "Angular-Dart", "Flutter", "Flume", "SQL", "HTML", "CSS", "Team Work"]
+    skills: ["Java", "Full Stack", "Data", "Angular-Dart", "Flutter", "Flume", "SQL", "HTML", "CSS", "Team Work"],
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
   },
   {
     title: "Software Engineer",
@@ -25,7 +26,8 @@ const experiences = [
       "Scaled and stabilized the multiple components of the product.",
       "Our team won two internal hackathons."
     ],
-    skills: ["Python", "Django", "Full Stack", "GIT", "HTML", "CSS", "AWS", "SQS", "JavaScript", "Linux", "Team work"]
+    skills: ["Python", "Django", "Full Stack", "GIT", "HTML", "CSS", "AWS", "SQS", "JavaScript", "Linux", "Team work"],
+    logo: "https://media.licdn.com/dms/image/C4D0BAQGmsF0umuNgPw/company-logo_200_200/0/1656674998720/hackerearth_logo?e=2147483647&v=beta&t=YvA5SLyoXQc7HQYp_SPVrC5YQzviVkONy_-FFpDnTdA"
   },
   {
     title: "Problem Setter Intern",
@@ -36,7 +38,8 @@ const experiences = [
       "I was here responsible for creating and testing programming questions based on Data Structure, Algorithms, and Math.",
       "Conducted successful hiring challenges for Google, Facebook, Nokia, PayPal etc."
     ],
-    skills: ["Data Structure", "Algorithm", "C/C++", "Core Java", "Python", "Problem Solving", "Team work"]
+    skills: ["Data Structure", "Algorithm", "C/C++", "Core Java", "Python", "Problem Solving", "Team work"],
+    logo: "https://media.licdn.com/dms/image/C4D0BAQGmsF0umuNgPw/company-logo_200_200/0/1656674998720/hackerearth_logo?e=2147483647&v=beta&t=YvA5SLyoXQc7HQYp_SPVrC5YQzviVkONy_-FFpDnTdA"
   }
 ];
 
@@ -79,13 +82,17 @@ export default function Experience() {
                     <div className="text-sm text-muted-foreground">{exp.period}</div>
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-4">
-                    <Briefcase size={18} className="text-highlight" />
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="h-12 w-12 rounded-full bg-white p-1 flex items-center justify-center">
+                      <img src={exp.logo} alt={`${exp.company} logo`} className="h-10 w-10 object-contain" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold">{exp.title}</h3>
+                      <div className="text-lg font-medium">{exp.company}</div>
+                    </div>
                   </div>
                   
                   <div className="mb-4">
-                    <div className="text-lg font-medium">{exp.company}</div>
                     <div className="text-sm text-muted-foreground">{exp.location}</div>
                   </div>
                   
