@@ -1,44 +1,40 @@
 
 import { ArrowDownCircle, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const names = ['Jyotish Bhaskar', 'Starboy_JB'];
   const [displayName, setDisplayName] = useState('');
   const [currentNameIndex, setCurrentNameIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const indexRef = useRef(0);
+  const [index, setIndex] = useState(0);
   
   useEffect(() => {
     const currentName = names[currentNameIndex];
     let timeout: NodeJS.Timeout;
     
-    const updateText = () => {
-      if (!isDeleting && indexRef.current < currentName.length) {
-        setDisplayName(prev => prev + currentName[indexRef.current]);
-        indexRef.current += 1;
-        timeout = setTimeout(updateText, 150);
-      } else if (isDeleting && indexRef.current > 0) {
+    if (!isDeleting && index < currentName.length) {
+      timeout = setTimeout(() => {
+        setDisplayName(prev => prev + currentName[index]);
+        setIndex(index + 1);
+      }, 150);
+    } else if (isDeleting && index > 0) {
+      timeout = setTimeout(() => {
         setDisplayName(prev => prev.slice(0, -1));
-        indexRef.current -= 1;
-        timeout = setTimeout(updateText, 100);
-      } else if (!isDeleting && indexRef.current === currentName.length) {
-        timeout = setTimeout(() => {
-          setIsDeleting(true);
-          updateText();
-        }, 1000); // Pause before deleting
-      } else if (isDeleting && indexRef.current === 0) {
+        setIndex(index - 1);
+      }, 100);
+    } else if (!isDeleting && index === currentName.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
+    } else if (isDeleting && index === 0) {
+      timeout = setTimeout(() => {
         setIsDeleting(false);
         setCurrentNameIndex((currentNameIndex + 1) % names.length);
-        timeout = setTimeout(updateText, 300);
-      }
-    };
-    
-    timeout = setTimeout(updateText, 300);
+      }, 300);
+    }
     
     return () => clearTimeout(timeout);
-  }, [currentNameIndex, isDeleting]);
+  }, [index, isDeleting, currentNameIndex, names]);
 
   return (
     <section id="home" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
