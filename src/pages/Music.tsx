@@ -1,5 +1,5 @@
 
-import { Playlist, Music2 } from 'lucide-react';
+import { Music2 } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -58,7 +58,7 @@ export default function Music() {
                 <Card className="transition-all duration-300 hover:border-highlight hover:shadow-lg hover:shadow-highlight/10">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-2">
-                      <Playlist className="w-5 h-5 text-highlight" />
+                      <Music2 className="w-5 h-5 text-highlight" />
                       <CardTitle>{playlist.title}</CardTitle>
                     </div>
                     <CardDescription>{playlist.description}</CardDescription>

@@ -14,7 +14,7 @@ const navItems = [
   { name: 'Music', href: '/jyotish/personal/music', isExternal: true }
 ];
 
-export default function Navbar() {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -109,6 +109,6 @@ export default function Navbar() {
       )}
     </nav>
   );
-}
+};
 
 export default Navbar;
