@@ -1,72 +1,96 @@
 
-import { Music2 } from 'lucide-react';
+import { Music2, Youtube } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 
 interface PlaylistItem {
   title: string;
   description: string;
   url: string;
   songs: number;
+  category: 'dance' | 'chill' | 'focus';
 }
 
 const playlists: PlaylistItem[] = [
   {
-    title: "Coding & Focus",
-    description: "Perfect beats for deep work and coding sessions",
-    url: "https://youtube.com/playlist?list=PLbVHz4urQBZnGEMnxWxJDrT8_BqpL5bL9",
-    songs: 42
+    title: "Dance Vibes",
+    description: "Perfect beats to get you moving and grooving",
+    url: "https://music.youtube.com/playlist?list=PLlBkOTkkcXH4wcERvZ5ebsEgS_vTmBqSJ",
+    songs: 45,
+    category: 'dance'
   },
   {
-    title: "Chill Vibes",
-    description: "Relaxing tunes for unwinding",
-    url: "https://youtube.com/playlist?list=PLbVHz4urQBZnHEv_yYxP4HqTz_BGG6L3k",
-    songs: 35
+    title: "Feels Good",
+    description: "Music that lifts your spirits and brightens your day",
+    url: "https://music.youtube.com/playlist?list=PLlBkOTkkcXH6lJ7AlBxdW1uuYeV34NL2Q",
+    songs: 38,
+    category: 'chill'
   },
   {
-    title: "Workout Energy",
-    description: "High-energy tracks for intense workouts",
-    url: "https://youtube.com/playlist?list=PLbVHz4urQBZnKJ8L5QXD9R6K9w_BjT5Lm",
-    songs: 28
+    title: "Lofi Beats",
+    description: "Relaxing lofi tunes for focus and chill vibes",
+    url: "https://music.youtube.com/playlist?list=PLlBkOTkkcXH57em26Iy_geI-uc629muhg",
+    songs: 52,
+    category: 'focus'
   }
 ];
 
 export default function Music() {
   return (
-    <div className="min-h-screen bg-navy pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-navy via-navy-dark to-black pt-20">
       <div className="section-container">
-        <div className="flex items-center gap-3 mb-8">
-          <Music2 className="w-8 h-8 text-highlight" />
-          <h1 className="text-3xl font-bold">My Music Collection</h1>
+        <div className="flex flex-col items-center text-center mb-12">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-highlight to-highlight-light rounded-full blur opacity-30"></div>
+            <Music2 className="w-16 h-16 text-highlight relative" />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mt-6 bg-gradient-to-r from-highlight to-highlight-light bg-clip-text text-transparent">
+            My Music Collection
+          </h1>
+          <p className="text-muted-foreground mt-4 max-w-2xl text-lg">
+            Music has the power to move, inspire, and transform. Here are my carefully curated playlists 
+            that accompany me through different moments of life.
+          </p>
         </div>
-        
-        <p className="text-muted-foreground mb-8 max-w-2xl">
-          Music has always been an integral part of my life. Here are some carefully curated playlists 
-          that I've put together for different moods and occasions. Feel free to explore and enjoy!
-        </p>
 
-        <ScrollArea className="h-[70vh]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ScrollArea className="h-[calc(100vh-300px)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
             {playlists.map((playlist, index) => (
               <a 
                 key={index}
                 href={playlist.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block group"
+                className="block group transform transition-all duration-300 hover:scale-105"
               >
-                <Card className="transition-all duration-300 hover:border-highlight hover:shadow-lg hover:shadow-highlight/10">
+                <Card className="h-full bg-navy-light/50 backdrop-blur-sm border-muted/20 transition-all duration-300 hover:border-highlight group-hover:shadow-xl group-hover:shadow-highlight/10">
                   <CardHeader>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Music2 className="w-5 h-5 text-highlight" />
-                      <CardTitle>{playlist.title}</CardTitle>
+                    <div className="flex items-center justify-between mb-4">
+                      <Badge 
+                        variant="outline" 
+                        className="bg-highlight/10 text-highlight border-highlight/20"
+                      >
+                        {playlist.category}
+                      </Badge>
+                      <Youtube className="w-5 h-5 text-red-500" />
                     </div>
-                    <CardDescription>{playlist.description}</CardDescription>
+                    <div className="space-y-2">
+                      <CardTitle className="text-2xl group-hover:text-highlight transition-colors">
+                        {playlist.title}
+                      </CardTitle>
+                      <CardDescription className="text-muted-foreground/80">
+                        {playlist.description}
+                      </CardDescription>
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">
-                      {playlist.songs} tracks
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <Music2 className="w-4 h-4 text-highlight" />
+                      <p className="text-sm text-muted-foreground">
+                        {playlist.songs} tracks
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               </a>
